@@ -1,6 +1,6 @@
-# MOL'25 - Modular minimalist grammar with realizational morphology
+# Modular minimalist grammar with realizational morphology
 
-Slides and a Haskell implementation.
+[MOL-25](https://mol2025.molweb.xyz/programproceedings.html) slides and a Haskell implementation.
 
 I installed ghc with [ghcup](https://www.haskell.org/ghcup/), and then used
 [ghci 9.6.7](https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html)
