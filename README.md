@@ -11,7 +11,7 @@ run with the ghcup-recommended ghci versions for some time.
 To run some examples, some of which are mentioned in the slides, type:
 
 ```
-> ghci
+> ghci -package time
 ghci> :l Examples
 ghci> ex 7
 ghci> xx 2
