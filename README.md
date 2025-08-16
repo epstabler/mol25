@@ -1,13 +1,16 @@
 # Modular minimalist grammar with realizational morphology
 
-** IN PREPARATION **
+A preliminary implementation based on the
+[MOL-25](https://mol2025.molweb.xyz/programproceedings.html) paper of
+the same name -- **still under development**.
 
-Based on [MOL-25](https://mol2025.molweb.xyz/programproceedings.html)
-paper of the same name, here are slides and a Haskell implementation
-of the function g that maps binary trees over roots to binary trees
-over pronounceable morphemes, if the structure is grammatical.
+Mg.hs defines a function g that maps binary trees over roots to
+binary trees over pronounceable morphemes, if the structure is
+grammatical.
 
-**Listings.pdf** shows the 6 linguistic modules and the definition of g on 4 pretty-printed pages, with lots of white space, followed by **an example session**. 
+**Listings.pdf** shows the definition of the grammar g and
+the 6 linguistic modules it composes, followed by
+**an example session**. 
 
 I installed ghc with [ghcup](https://www.haskell.org/ghcup/), and then used
 [ghci 9.6.7](https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html)
