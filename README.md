@@ -1,8 +1,10 @@
 # Modular minimalist grammar with realizational morphology
 
-A preliminary implementation based on the
+This is a preliminary implementation 
+**still under development**
+based on the
 [MOL-25](https://mol2025.molweb.xyz/programproceedings.html) paper of
-the same name -- **still under development**.
+the same name.
 
 Mg.hs defines a function g that maps binary trees over roots to
 binary trees over pronounceable morphemes, if the structure is
