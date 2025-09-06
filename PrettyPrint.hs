@@ -11,8 +11,8 @@ leaf2str :: Leaf -> String
 leaf2str (morph,lbl,agr) = joinstr " " morph ++ ":" ++ sel2str lbl ++ agrfs2str agr
 
 agrfs2str :: Agr -> String
-agrfs2str [] = ""
-agrfs2str agrfs = " " ++ joinstr "," (map pair2str agrfs) where
+agrfs2str ([],[]) = ""
+agrfs2str (p,g) = " " ++ joinstr "," (map pair2str p ++ g) where
   pair2str (tier,f) = "{" ++ joinstr "," (map (joinstr ".") tier) ++ "}:" ++ f
 
 sel2str :: Sel -> String
@@ -35,11 +35,11 @@ so2pretty =  so2pretty' 0 where
   so2pretty' i (S x y) = "{ " ++ so2pretty' (i+2) x ++ ",\n" ++ tab2str (i+1) ++ so2pretty' (i+2) y ++ " }"
 
 lbl2str :: Label -> String
-lbl2str (sel, [], movers) = case movers of {[] -> sel2str sel; _ -> sel2str sel ++ "," ++ movers2str movers}
+lbl2str (sel, ([],[]), movers) = case movers of {[] -> sel2str sel; _ -> sel2str sel ++ "," ++ movers2str movers}
 lbl2str (sel, agr, movers) = case movers of {[] -> sel2str sel; _ -> sel2str sel ++ "," ++  agrfs2str agr ++ "," ++ movers2str movers}
 
 mover2str :: Mover -> String
-mover2str (so,pos,[]) = "(" ++ so2str so ++ "," ++ joinstr "." pos ++ ")"
+mover2str (so,pos,([],[])) = "(" ++ so2str so ++ "," ++ joinstr "." pos ++ ")"
 mover2str (so,pos,agrfs) = "(" ++ so2str so ++ "," ++ joinstr "." pos ++ "," ++  agrfs2str agrfs ++ ")"
 
 movers2str :: [Mover] -> String
