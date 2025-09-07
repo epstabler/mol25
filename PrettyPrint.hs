@@ -31,11 +31,9 @@ so2pretty =  so2pretty' 0 where
   so2pretty' i (S x y) = "{ " ++ so2pretty' (i+2) x ++ ",\n" ++ tab2str (i+1) ++ so2pretty' (i+2) y ++ " }"
 
 lbl2str :: Label -> String
-lbl2str (sel, ([],[]), movers) = case movers of
-  [] -> sel2str sel
-  _ -> sel2str sel ++ "," ++ movers2str movers
-lbl2str (sel, agr, movers) = case movers of
-  [] -> sel2str sel
+lbl2str (sel, agr, movers) = case (movers,agr) of
+  ([],_) -> sel2str sel
+  (_,([],[])) -> sel2str sel ++ "," ++ movers2str movers
   _ -> sel2str sel ++ "," ++  agrfs2str agr ++ "," ++ movers2str movers
 
 mover2str :: Mover -> String

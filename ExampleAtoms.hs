@@ -20,7 +20,7 @@ atom i = [
   L (["√chase"], (["D","K"], ["V*"]), ([],[])),  -- 11
   L (["-√v"], (["V*","D"], ["v*"]), ([],[])),    -- 12
   L (["-√pres"], (["v*","K"], ["T"]), ([],[])),  -- 13
-  -- for testing head movement, Figure 2
+  -- testing head movement, Figure 2
   L (["√have"], ([], ["HAVE"]), ([],[])),        -- 14
   L (["√have@"], ([], ["HAVE"]), ([],[])),       -- 15
   L (["-√pres"], (["HAVE"], ["T"]), ([],[])),    -- 16
@@ -31,7 +31,7 @@ atom i = [
   -- more variations on second example:
   L (["√who"], ([], ["D","K","wh"]), ([],[])),   -- 21
   L (["√decl"], (["T","wh"], ["C"]), ([],[])),   -- 22
-  -- for testing agr, Figure 3
+  -- testing agr, Figure 3
   L (["√the"], (["N"], ["D","K"]),               -- 23
      ([([["D"],["N"]],"φ:_")],
       []
