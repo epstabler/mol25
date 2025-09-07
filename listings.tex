@@ -1,23 +1,14 @@
 \documentclass{article}
 \usepackage{times}
 \usepackage{latexsym}
-%% \usepackage[T1]{fontenc}
-%% \usepackage[utf8]{inputenc}
 
-% https://tex.stackexchange.com/questions/458627/how-do-i-display-unicode-characters-with-minted
-%\usepackage[LGR, T1]{fontenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage[utf8]{inputenc} % The default since 2018
+\usepackage[utf8]{inputenc}
 \usepackage[cache=false]{minted}
 
 \usepackage{microtype}
-%\usepackage{datetime} \newcommand\timestamp{\twodigit{\year}-\twodigit{\month}-\twodigit{\day}}
 \usepackage{amsmath,amssymb}
-%\usepackage{mathpartir} % for \inferrule
-%\usepackage{soul} % \st for strikethrough
-%\usepackage[linguistics]{forest}
-%\usepackage{mdframed} % for sidebar
 \usepackage[letterpaper,top=1.7cm,bottom=1.7cm,left=1cm,right=1cm,head=1cm,foot=1cm,marginpar=30pt]{geometry}
 \usepackage{minted}
 
@@ -37,34 +28,27 @@
 
 \eject
 \section{Basic types}
-%\lstinputlisting[language=haskell]{MgTypes.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{MgTypes.hs}
 
 \section{Merge}
-%\lstinputlisting[language=haskell]{Mrg.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{Mrg.hs}
 
 \section{Selection}
-%\lstinputlisting[language=haskell]{Ls.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{Sel.hs}
 
 \eject
 \section{Agreement}
-%\lstinputlisting[language=haskell]{Ls.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{Agr.hs}
 
 \vfill\eject
 \section{Head movement}
-%\lstinputlisting[language=haskell]{Hm.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{Hm.hs}
 
 \section{Linearization}
-%\lstinputlisting[language=haskell]{Lin.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{Lin.hs}
 
 \eject
 \section{Vocabulary insertion}
-%\lstinputlisting[language=haskell]{Vi.hs}
 \inputminted[fontsize=\footnotesize]{haskell}{Vi.hs}
 
 \section{Modular minimalist grammar, composed}
@@ -72,15 +56,19 @@
 
 \eject
 \section*{Example session with ghci}
-As in the paper, lin puts moved constituents in parentheses, rather than deleting them, just
+As in the paper, lin puts moved constituents in parentheses, rather
+than deleting them, just
 
-to make it easier to understand the analysis. To delete them, adjust the definition of del in Lin.hs.
+to make it easier to understand the analysis. To delete them, adjust
+the definition of del in Lin.hs.
 
 \noindent
-Also note that smc is enforced here. To stop enforcing it, adjust definition of newmovers in Sel.hs.
+Also note that smc is enforced here. To stop enforcing it, adjust
+definition of newmovers in Sel.hs.
 
 \noindent
-Here, ex 8 is the example from Figures 1 and 4 in the paper, and ex 50 is Figure 3. See Examples.hs for many more.
+Here, ex 8 is the example from Figures 1 and 4 in the paper, and ex 50
+is Figure 3. See Examples.hs for many more.
 
 \inputminted[fontsize=\footnotesize]{haskell}{Examples-session.txt}
 
