@@ -7,7 +7,6 @@ import Hm (rmHmDiacritics)
  They should be separated in future work, to support parametric grammar definition, as in the paper. -}
 
 vi :: SO -> SO
---vi so = so
 vi E = E
 vi (S (L (["√de"],s,a)) (S (L (["√el"],s',a')) so)) = S (L (["del"],s,a)) (S (L ([],s',a')) so)
 vi (S so so') = S (vi so) (vi so')
