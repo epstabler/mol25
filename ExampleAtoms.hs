@@ -15,7 +15,7 @@ atom i = [
   L (["√know"], (["C","D"], ["V"]), ([],[])),    -- 7
   L (["√decl"], (["V"], ["C"]), ([],[])),        -- 8
   L (["√q"], (["V","wh"], ["C"]), ([],[])),      -- 9
-  -- a second example,just slightly more elaborate with EPP feature K
+  -- a second example,just slightly more elaborate
   L (["√the"], (["N"], ["D","K"]), ([],[])),     -- 10
   L (["√chase"], (["D","K"], ["V*"]), ([],[])),  -- 11
   L (["-√v"], (["V*","D"], ["v*"]), ([],[])),    -- 12
@@ -32,16 +32,6 @@ atom i = [
   L (["√who"], ([], ["D","K","wh"]), ([],[])),   -- 21
   L (["√decl"], (["T","wh"], ["C"]), ([],[])),   -- 22
   -- for testing agr, Figure 3
-  {-
-  L (["√the"], (["N"], ["D","K"]),               -- 23
-     ([],
-      ["φ:44"]
-     )),
-  L (["√which"], (["N"], ["D","K","wh"]),        -- 24
-     ([],
-      ["φ:33"]
-     )),
-  -}
   L (["√the"], (["N"], ["D","K"]),               -- 23
      ([([["D"],["N"]],"φ:_")],
       []
