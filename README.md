@@ -4,7 +4,7 @@ This is a preliminary implementation
 **still under development**
 based on the
 [MOL-25](https://mol2025.molweb.xyz/programproceedings.html) paper of
-the same name.
+the same name, in Haskell.
 
 Mg.hs defines a function g that maps binary trees over roots to
 binary trees over pronounceable morphemes, if the structure is
