@@ -24,4 +24,4 @@ lbl (L (_, selfs, agrfs)) = (selfs, agrfs, []) -- after lblck, lbl can be calcul
 lbl (S so so') = case (lbl so, lbl so') of
   ( ((f:ns, ps), agrfs, movers), (([], _:ps'), agrfs', movers') ) -> case partition ((== f).head.sndOf3) movers of
       ( [(_,_:ps'',agrfs'')], movers'') -> ((ns,ps), agrfs, newmovers so' movers'' [] ps'' agrfs'') -- IM
-      _ -> ((ns,ps), agrfs, newmovers so' movers movers' ps' agrfs')                                 -- EM
+      _ -> ((ns,ps), agrfs, newmovers so' movers movers' ps' agrfs')                                -- EM
