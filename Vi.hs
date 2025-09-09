@@ -1,6 +1,5 @@
 module Vi where
 import MgTypes (F,Morph,SO(L,S,E),subList,joinStr)
-import Sel (hd)
 import Agr (leafFeatures)
 import Hm (rmHmDiacritics)
 
