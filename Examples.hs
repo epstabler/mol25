@@ -13,7 +13,7 @@ import Data.Time (getCurrentTime, diffUTCTime)
 {- build some examples with atoms from ExampleAtoms.hs -}
 exs :: [SO]
 exs = [
-  -- first example, Figures 1 and 4
+  -- first example, Figures 1 and 4 = ex 8
   S (atom 1) (atom 5),                     -- 0 (which food): D
   S (atom 6) (head exs),                   -- 1 like (which food)
   S (atom 2) (atom 3),                     -- 2 the cat
@@ -32,7 +32,7 @@ exs = [
   S (exs!!13) (exs!!9),                    -- 14 "(the rat) v* chase the cat" v*,K
   S (atom 13) (exs!!14),                   -- 15 "chase pres (the rat) chase the cat" K-oT,K
   S (exs!!15) (exs!!9),                    -- 16 "the rat chase pres the cat" T
-  -- test hm, examples in Figure 2
+  -- testing hm, compare the 3 trees in Figure 2
   S (atom 17) (atom 15),                   -- 17 "have -pres" in T
   S (atom 20) (exs!!17),                   -- 18 "have -pres -q" in C
   S (atom 19) (S (atom 16) (atom 15)),     -- 19 "have* -pres -q" in V
@@ -59,7 +59,7 @@ exs = [
   S (exs!!37) (exs!!32),                   -- 38 "(which cat) chase pres the rat-s (which cat)" T,K
   S (atom 30) (exs!!38),                   -- 39 "(which cat) chase pres the rat-s" C,wh
   S (exs!!39) (exs!!32),                    -- 40 "which cat chase-s the rat-s" C,
-  -- Figure 3, testing agr: which rat-s the cat chase-s
+  -- Figure 3 = ex 50, testing agr: which rat-s the cat chase-s
   S (atom 24) (atom 26),                   -- 41 "which rat-s"
   S (atom 23) (atom 25),                   -- 42 "the cat"
   S (atom 27) (exs!!41),                   -- 43 "chase-s (which rat-s)"
@@ -69,7 +69,26 @@ exs = [
   S (atom 29) (exs!!46),                   -- 47 "(the cat) (which rat-s) chase-s pres" K-oT,K
   S (exs!!47) (exs!!42),                   -- 48 "the cat (the cat) (which rat-s) chase-s pres ()" T,K
   S (atom 30) (exs!!48),                   -- 49 "(which rat-s) the cat () () chase-s pres ()" C,wh
-  S (exs!!49) (exs!!41)                    -- 50 "which rat-s the cat chase-s" C,
+  S (exs!!49) (exs!!41),                   -- 50 "which rat-s the cat chase-s" C,
+  -- English BE example, Figure 5 = ex 53
+  S (atom 33) (atom 34),                   -- 51 "v laugh"
+  S (atom 32) (exs!!51),                   -- 52 "Asp v laugh"
+  S (atom 31) (exs!!52),                   -- 53 "T Asp v laugh"
+  -- French example, Figure 6a = ex 58 (Mixing languages -- we dodge conflicts by sticking to present tense)
+  S (atom 38) (atom 39),                   -- 54 "mor-ts (elle-s)"
+  S (atom 37) (exs!!54),                   -- 55 "v mor-ts (elle-s)"
+  S (atom 36) (exs!!55),                   -- 56 "Aux v mor-ts (elle-s)"
+  S (atom 35) (exs!!56),                   -- 57 "T Aux v mor-ts (elle-s)"
+  S (exs!!57) (atom 39),                   -- 58 "elle-s sont mor-ts"
+  -- French example, Figure 6b = ex 66
+  S (atom 40) (atom 41),                   -- 59 "la fleur"
+  S (atom 42) (exs!!59),                   -- 60 "pri (la fleur)"
+  S (exs!!60) (exs!!59),                   -- 61 "pri la fleur"
+  S (atom 43) (exs!!61),                   -- 62 "pri -s la fleur"
+  S (exs!!62) (atom 44),                   -- 63 "pri -s la fleur (Camille)"
+  S (atom 45) (exs!!63),                   -- 64 "Aux pri -s la fleur (Camille)"
+  S (atom 46) (exs!!64),                   -- 65 "T Aux pri -s la fleur (Camille)"
+  S (exs!!65) (atom 44)                    -- 66 "Camille a pri-s la fleur"
   ]
 
 xxs = [ -- CHECKING THAT PROBLEM CASES ARE APPROPRIATELY HANDLED

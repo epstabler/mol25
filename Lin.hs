@@ -15,4 +15,4 @@ lin (S so so') = let ((f:_,ps),agrfs,movers) = lbl so in case partition ((== f).
       _ -> S (lin so) (del so')              -- moving element
     -- del _ = E                             -- uncomment this line to make del = removal
     del (S so so') = S (del so) (del so')
-    del (L (morph,sel,agr)) = if head morph == "(" then L (morph,sel,agr) else L (["("]++morph++[")"],sel,agr)
+    del (L (morph,sel,agr)) = if (not.null) morph && head morph == "(" then L (morph,sel,agr) else L (["("]++morph++[")"],sel,agr)

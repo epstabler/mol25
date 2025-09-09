@@ -20,12 +20,21 @@ to develop and test the code in this directory.
 No exotic language features are used, so this code should
 run with ghcup-recommended ghci versions for some time.
 
-To run some examples -- a couple that succeed, and one that fails:
+See Examples.hs for many examples. There,
+Figure 1 = ex 8;
+Figure 2 is similar to ex 17, ex 18, ex 19, ex 20, ex 21, ex 22;
+Figure 3 = ex 50;
+Figure 4 = ex 8;
+Figure 5 = ex 53;
+Figure 6a = ex 58;
+Figure 6b = ex 66.
+
+Here we run one of these examples that succeeds, and
+one that fails because it violates smc:
 
 ```
 > ghci -package time
 ghci> :l Examples
 ghci> ex 8
-ghci> ex 40
-ghci> xx 0
+ghci> xx 3
 ```

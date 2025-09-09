@@ -16,10 +16,12 @@ sel so = let lso = (lblck so, lblck so) in
   smc movers = if noduplicates (map (head.sndOf3) movers) then movers else error "smc"
   noduplicates fs = case fs of {[] -> True; f:fs -> f `notElem` fs && noduplicates fs}
 
+newmovers so' ms ms' ps' agrfs' = case ps' of {[] -> ms++ms'; _ -> ms++[(so',ps',agrfs')]++ms'}
+
+hd so = case so of {S so _ -> hd so; L leaf -> leaf} -- after lablck and before lin, this def of syntactic head suffices
+
 lbl (L (_, selfs, agrfs)) = (selfs, agrfs, []) -- after lblck, lbl can be calculated without identities or smc
 lbl (S so so') = case (lbl so, lbl so') of
   ( ((f:ns, ps), agrfs, movers), (([], _:ps'), agrfs', movers') ) -> case partition ((== f).head.sndOf3) movers of
       ( [(_,_:ps'',agrfs'')], movers'') -> ((ns,ps), agrfs, newmovers so' movers'' [] ps'' agrfs'') -- IM
       _ -> ((ns,ps), agrfs, newmovers so' movers movers' ps' agrfs')                                 -- EM
-
-newmovers so' ms ms' ps' agrfs' = case ps' of {[] -> ms++ms'; _ -> ms++[(so',ps',agrfs')]++ms'}

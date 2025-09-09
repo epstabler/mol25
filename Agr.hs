@@ -1,5 +1,6 @@
 module Agr where
 import MgTypes (F,Tier,Agr,Leaf,SO(L,S,E),typeVal,subList)
+import Sel (hd)
 
 agr :: SO -> SO
 agr E = E
@@ -27,8 +28,6 @@ agr (S hso cso) = let (hso',cso') = (agr hso, agr cso) in
       if gtype == ftype
       then (gval, (gtype ++ ":_" ++ gval):gs, True)
       else let (gval',gs',changed) = matchAndFlag (ftype,fval) gs in (gval', g:gs', changed)
-
-  hd so = case so of {S so _ -> hd so; L leaf -> leaf}
 
   nextLeafInTier _ E = Nothing
   nextLeafInTier tier (L h) = if leafIsInTier h tier then Just h else Nothing
