@@ -27,7 +27,7 @@ mDefault rs lfs = case rs of
   [] -> []
   where
   rDefault cs = rmFs ("",case cs of {'√':cs' -> cs' ; _ -> cs})
-rmFs (t,f) = case f of {'.':_ -> t; c:cs -> rmFs (t++[c],cs); _ -> t}
+  rmFs (t,f) = case f of {'.':_ -> t; c:cs -> rmFs (t++[c],cs); _ -> t}
 
 ph :: SO -> String  -- return string of phonologically specified morphs
 ph (S so so') = joinStr " " [ph so, ph  so']
